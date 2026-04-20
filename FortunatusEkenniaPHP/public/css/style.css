@@ -1,0 +1,190 @@
+.hero-section img {
+    height: 500px;
+    object-fit: cover;
+    filter: brightness(85%);
+}
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+.carousel-caption h1, .carousel-caption p {
+    color: white;
+}
+.card {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border-radius: 15px;
+    max-width: 600px;
+    margin: auto;
+}
+.card p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+.list-inline-item a {
+    transition: color 0.3s ease-in-out;
+}
+.list-inline-item a:hover {
+    color: #007bff;
+}
+
+
+
+/* Force latest styles to be used */
+* {
+    box-sizing: border-box;
+}
+
+
+/* Standardize Card Images */
+.card-img-top {
+    height: 200px; /* Set equal height for images */
+    object-fit: cover; /* Ensures images fill space without stretching */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Ensure Cards Are Equal Height */
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 10px; /* Softer edges */
+    overflow: hidden; /* Keep images inside the card */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+
+
+/* Fix Slideshow Image Sizes */
+.carousel-img {
+    width: 100%;  /* Full width */
+    height: 400px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures images fill space without distortion */
+}
+
+/* Booking Form Styling */
+.booking-container {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border-radius: 15px;
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+}
+
+.booking-container .form-control {
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+}
+
+.booking-container label {
+    font-weight: bold;
+}
+
+.booking-container button {
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Button Styling */
+.booking-container .btn-primary {
+    background-color: #ffc107;
+    border: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.booking-container .btn-primary:hover {
+    background-color: #ffca28;
+}
+
+/* Room Image Consistency */
+.room-img {
+    height: 250px; /* Ensures uniform image size */
+    object-fit: cover; /* Prevents distortion */
+}
+
+
+/* Background and overlay */
+.reservation-hero {
+    background-image: url('../images/reserved.jpg'); /* Path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Overlay to darken the background */
+.reservation-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+/* Container for the form */
+.reservation-hero .container {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Form styling */
+.reservation-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.reservation-form .form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0.75rem;
+    font-size: 1rem;
+}
+
+.reservation-form .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.reservation-form .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.reservation-form .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Text styling */
+.text-white {
+    color: #fff !important;
+}
+
+
+

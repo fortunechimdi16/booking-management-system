@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /FortunatusEkenniaPHP/public/
+
+# Redirect all requests to index.php except for actual files/folders
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php?page=$1 [QSA,L]

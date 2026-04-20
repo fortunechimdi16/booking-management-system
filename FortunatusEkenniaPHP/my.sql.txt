@@ -1,0 +1,50 @@
+-- 1. Create the database
+CREATE DATABASE IF NOT EXISTS fortunatusekenniaphp
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_general_ci;
+
+USE fortunatusekenniaphp;
+
+-- 2. Create the admins table
+CREATE TABLE IF NOT EXISTS admins (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    username VARCHAR(50) COLLATE utf8mb4_general_ci NOT NULL,
+    password_hash VARCHAR(255) COLLATE utf8mb4_general_ci NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    KEY username_index (username)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- 3. Create the reservations table
+CREATE TABLE IF NOT EXISTS reservations (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    room_id INT(11) NOT NULL,
+    guest_name VARCHAR(255) COLLATE utf8mb4_general_ci NOT NULL,
+    email VARCHAR(255) COLLATE utf8mb4_general_ci NOT NULL,
+    phone VARCHAR(20) COLLATE utf8mb4_general_ci NOT NULL,
+    checkin_date DATE NOT NULL,
+    checkout_date DATE NOT NULL,
+    num_adults INT(11) NOT NULL,
+    num_children INT(11) NOT NULL,
+    num_rooms INT(11) NOT NULL,
+    reservation_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    confirmation_number VARCHAR(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+    total_cost DECIMAL(10,2) NOT NULL,
+    PRIMARY KEY (id),
+    KEY room_id_index (room_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- 4. Create the rooms table
+CREATE TABLE IF NOT EXISTS rooms (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    room_number VARCHAR(20) COLLATE utf8mb4_general_ci NOT NULL,
+    room_type VARCHAR(100) COLLATE utf8mb4_general_ci NOT NULL,
+    price_per_night DECIMAL(10,2) NOT NULL,
+    status ENUM('available', 'booked', 'maintenance') COLLATE utf8mb4_general_ci DEFAULT 'available',
+    description TEXT COLLATE utf8mb4_general_ci DEFAULT NULL,
+    max_adults INT(11) NOT NULL,
+    max_children INT(11) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    price DECIMAL(10,2) NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
